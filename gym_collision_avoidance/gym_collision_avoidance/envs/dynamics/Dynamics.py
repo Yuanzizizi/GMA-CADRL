@@ -12,18 +12,15 @@ class Dynamics(object):
 
     def __init__(self, agent):
         self.agent = agent
-        pass
-
+        
     def step(self, action, dt):
         """ Dummy method to be implemented by each Dynamics subclass
         """
         raise NotImplementedError
 
     def update_ego_frame(self):
-        """ Update agent's heading and velocity by converting those values from the global to ego frame.
-
-        This should be run every time :code:`step` is called (add to :code:`step`?)
-
+        """ Update agent's heading and velocity by converting those values from the global to ego frame
+        This should be run every time :code:`step` is called
         """
         # Compute heading w.r.t. ref_prll, ref_orthog coordinate axes
         self.agent.ref_prll, self.agent.ref_orth = self.agent.get_ref()
